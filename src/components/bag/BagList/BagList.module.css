@@ -1,0 +1,15 @@
+.wrapper {
+  @apply p-4 w-full;
+}
+
+.header {
+  @apply flex justify-between;
+}
+
+.title {
+  @apply text-4xl font-light;
+}
+
+.container {
+  @apply py-4 gap-4 w-full flex flex-col sm:flex-row flex-wrap justify-center;
+}

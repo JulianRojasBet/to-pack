@@ -1,0 +1,12 @@
+.container {
+  @apply w-full sm:w-48 bg-primary text-base-100 p-4 rounded-md;
+  @apply flex-grow hover:bg-primary-focus;
+}
+
+.name {
+  @apply font-black text-lg mb-4;
+}
+
+.bottom {
+  @apply flex justify-between text-sm text-primary-content font-light;
+}

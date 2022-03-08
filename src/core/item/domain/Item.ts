@@ -1,13 +1,9 @@
-import List from "@/core/list/domain/List";
-
-export default class Bag {
+export default class Item {
   constructor(
     public id: UUID,
     public name: string,
+    public packed: boolean,
     public createdAt: TimeStamp,
     public updatedAt: TimeStamp,
-    public going: List,
-    public comeback: List
   ) {}
 }
-

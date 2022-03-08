@@ -1,3 +1,4 @@
+import List from "@/core/list/domain/List";
 import Bag from "../domain/Bag";
 import BagRepository from "../domain/BagRepository";
 
@@ -8,11 +9,13 @@ export default class BagRESTRepository implements  BagRepository {
   }
   async retrieve(id: UUID): Promise<Bag> {
     console.log('Bag retrieve')
-    return new Bag(id, 'name', 0, 0)
+    const list = new List('id', 'name', 0, 0, [])
+    return new Bag(id, 'name', 0, 0, list, list)
   }
   async list(): Promise<Bag[]> {
     console.log('Bag list')
-    return [new Bag('id', 'name', 0, 0)]
+    const list = new List('id', 'name', 0, 0, [])
+    return [new Bag('id', 'name', 0, 0, list, list)]
   }
   async update(id: UUID, bag: Bag): Promise<Bag> {
     console.log('Bag update')

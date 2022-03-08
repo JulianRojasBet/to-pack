@@ -1,0 +1,16 @@
+.item {
+  list-style-type: none;
+  @apply my-1 rounded-lg bg-neutral-focus hover:bg-neutral;
+}
+
+.label {
+  @apply flex items-center py-2 px-4 cursor-pointer;
+}
+
+.packed {
+  @apply checkbox checkbox-primary mr-4;
+}
+
+.name {
+  @apply label-text;
+}

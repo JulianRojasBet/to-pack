@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import Bag from '@/core/bag/domain/Bag'
+import { Bag } from '@/core/bag/types'
 import BagItem from '../BagItem/BagItem'
 
 import styles from './BagDetail.module.css'

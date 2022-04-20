@@ -1,17 +1,18 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Bag from '@/core/bag/domain/Bag'
+import { Bag } from '@/core/bag/types'
+import { List } from '@/core/list/types'
 import BagList from '@/components/bag/BagList'
-import styles from '../styles/pages/index.module.css'
-import List from '@/core/list/domain/List'
 
 const Home: NextPage = () => {
-  const list = new List('id', 'name', 0, 0, [])
-  const bag = new Bag('id', 'Langaruta', 0, 0, list, list)
+  const list: List = { id: 'id', name: 'name', createdAt: 0, updatedAt: 0, items: [] }
+  const bag: Bag = {
+    id: 'id', name: 'Langaruta', createdAt: 0, updatedAt: 0, going: list, comeback: list
+  }
   const bags = [bag]
 
   return (
-    <main className="page">
+    <main className="page" >
       <Head>
         <title>To Pack</title>
         <meta name="description" content="Bags list" />
@@ -19,7 +20,7 @@ const Home: NextPage = () => {
       </Head>
 
       <BagList bags={bags} />
-    </main>
+    </main >
   )
 }
 

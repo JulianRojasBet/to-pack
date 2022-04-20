@@ -1,5 +1,4 @@
-import Button from '@/components/common/Button/Button'
-import Bag from '@/core/bag/domain/Bag'
+import { Bag } from '@/core/bag/types'
 import Link from 'next/link'
 import BagCard from '../BagCard'
 import styles from './BagList.module.css'

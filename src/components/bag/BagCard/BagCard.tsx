@@ -1,4 +1,4 @@
-import Bag from '@/core/bag/domain/Bag'
+import { Bag } from '@/core/bag/types'
 import Link from 'next/link'
 import styles from './BagCard.module.css'
 

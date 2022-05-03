@@ -18,6 +18,9 @@ const BagList = ({ bags }: Props) => {
       </div>
       <div className={styles.container}>
         {bags.map(bag => <BagCard key={bag.id} bag={bag}/>)}
+        {!bags.length && (
+          <p className={styles.noBags}>There are not bags</p>
+        )}
       </div>
     </div>
   )

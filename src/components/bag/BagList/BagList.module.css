@@ -13,3 +13,7 @@
 .container {
   @apply py-4 gap-4 w-full flex flex-col sm:flex-row flex-wrap justify-center;
 }
+
+.noBags {
+  @apply text-primary
+}

@@ -1,2 +1,2 @@
 type UUID = string;
-type TimeStamp = number;
+type TimeStamp = string;

@@ -1,22 +1,18 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 
 import type { Bag } from '@/core/bag/types'
-import type { Item } from '@/core/item/types'
-import type { List } from '@/core/list/types/List'
 
 import Head from 'next/head'
 
 import BagDetail from '@/components/bag/BagDetail'
+import bagService from '@/core/bag/services'
 
-const BagPage: NextPage = () => {
-  const item: Item = { id: 'id', name: 'Item name', packed: false, createdAt: 0, updatedAt: 0 }
-  const list: List = {
-    id: 'id', name: 'name', createdAt: 0, updatedAt: 0, items: [item]
-  }
-  const bag: Bag = {
-    id: 'id', name: 'Langaruta', createdAt: 0, updatedAt: 0, going: list, comeback: list
-  }
+// TODO: Move to separated file
+type Props = {
+  bag: Bag
+}
 
+const BagPage: NextPage<Props> = ({ bag }) => {
   return (
     <main className="page" >
       <Head>
@@ -25,9 +21,15 @@ const BagPage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {bag && <BagDetail bag={bag} />}
+      <BagDetail bag={bag} />
     </main >
   )
+}
+
+// TODO: Move to separated file
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  const bag = await bagService.retrieve(params?.uuid as string)
+  return { props: { bag } }
 }
 
 export default BagPage

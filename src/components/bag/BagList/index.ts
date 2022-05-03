@@ -1,3 +1,3 @@
 import BagList from "./BagList";
 
-export default BagList
+export default BagList;

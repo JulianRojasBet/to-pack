@@ -16,7 +16,7 @@ const BagDetail: FC<Props> = ({ bag }) => {
       <header className={styles.header}>
         <h3>{bag.name}</h3>
       </header>
-      {bag.going.items.map(item => <BagItem key={item.id} item={item} />)}
+      {/* {bag.going.items.map(item => <BagItem key={item.id} item={item} />)} */}
     </>
   )
 }
